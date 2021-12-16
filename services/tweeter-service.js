@@ -33,6 +33,7 @@ module.exports = (app) => {
     }
 
     const likeTweet = (req,res) => {
+        console.log("check" + JSON.stringify(req.body))
         dao.updateTweet(req.params.id, req.body)
             .then(status => res.send(status));
     }

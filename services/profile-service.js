@@ -8,9 +8,9 @@ module.exports = (app) => {
             .then(profile => res.json(profile));
 
     const updateProfile = (req, res) =>
-    {console.log(req.body)
+        // console.log("req" + JSON.stringify(req.body));
         dao.updateProfile(req.body)
-            .then(status => res.send(status));}
+            .then(status => res.send(status));
 
     // const updateProfile = (req,res) => {
     //     const prof = {
@@ -84,6 +84,9 @@ module.exports = (app) => {
     //     // res.sendStatus(200);
     // }
     // app.get('/api/profile', getCurrentProfile);
+
+    // const findProfileByProfileID = (req,res) =>
+    //     dao.
 
     app.get('/api/profile/', findAllProfile);
     app.put('/api/profile', updateProfile);
